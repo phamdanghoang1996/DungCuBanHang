@@ -13,10 +13,13 @@
   });
 </script>
 <% @sptapya.each do |item| %>
-<div class="col-4">
-  <%= image_tag item.hinhanh, :alt=>"Ao Bong Da", :class=>"sanpham", :id=>item.id %>
-    <p style="margin-left: 10%;"> <%= item.tensanpham %> </p>
-    <p style="margin-left: 30%;"> <%= item.gia %> Đồng</p>
+<div class="col-md-4 text-center">
+  <%= image_tag item.hinhanh, :alt=>"Ao Bong Da", :class=>"sanpham img-responsive", :id=>item.id %>
+    <p> <strong>  <%= item.tensanpham %> </strong> </p>
+    <p><strong> Giá bán: <%= item.gia %> Đồng </strong></p>
+    <div class="text-center">
       <a href="/home/sanpham/<%=item.id%>" id="datmua"><button type="button" name="button">ĐẶT MUA</button></a>
+    </div>
+
 </div>
 <% end %>

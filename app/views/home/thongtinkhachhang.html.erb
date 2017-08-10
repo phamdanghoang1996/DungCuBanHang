@@ -1,7 +1,7 @@
 
 <div class="row">
   <div class="col-md-5">
-            <form class="form-group" action="/home/buy/<%= @thongtin %>" method="post">
+            <form class="form-group" action="/home/thongtinkhachhang/submit<%= @thongtin %>" method="post">
               <h3>Thông tin liên hệ: </h3>
               <label for="">Tên khách hàng: </label>
                   <input type="text" name="ten_khachhang" value="" class="form-control">
@@ -17,7 +17,7 @@
                     <% end %>
                   </select>
               <label for="">Chọn huyện: </label>
-                    <select name="huyen" class="form-control" id=huyen>
+                    <select name="quan" class="form-control" id=huyen>
 
                     </select>
               <label for="">Nhập số nhà, xã (phường): </label>
@@ -40,15 +40,14 @@
                             <td><%= @showsp.tensanpham %></td>
                             <td><input type="number" name="soluong" value="1" id="soluong"></td>
                             <td id="dongia" gia="<%= @showsp.gia %>"><%= @showsp.gia %></td>
-                            <td id="thanhtien"><%= @showsp.gia %></td>
+                            <td id="tong"><%= @showsp.gia %></td>
                             <input type="hidden" name="thanhtien" value="<%=@showsp.gia%>" id="thanhtienpost">
                         </tr>
                   </tbody>
                 </table>
                 <div class=text-right>
-                  <h4>Tổng: </h4>
+                  <h4>Tổng: <span id="tongtien"></span></h4>
                   <p>Số tiền mua hàng: <span id="tiensanpham"></span></p>
-                  <p>Phí vận chuyển:  </p>
                 </div>
                   <div class="text-center">
                       <button type="submit" name="button">ĐẶT HÀNG</button>
@@ -59,20 +58,27 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
+    $("#thanhtienpost").html($("#dongia").attr("gia"));
+    $("#tiensanpham").html($("#dongia").attr("gia"));
+    $("#tongtien").html($("#dongia").attr("gia"));
     $("#soluong").change(function(){
+      //So tien Mua ban sanpham
       var soluong = $(this).val();
       var dongia = $("#dongia").attr("gia");
       var thanhtien = soluong*dongia;
       $("#thanhtien").html(thanhtien);
       $("#tiensanpham").html(thanhtien);
       $("#thanhtienpost").val(thanhtien);
+      $("#tongtien").html(thanhtien);
+     //Tien Ship hang:
     });
     $("#tinh").change(function(){
       var value = $(this).val();
-      var link = "http://localhost:3000/home/diachi/"+value;
-      $.get(link, function(data){
+      var link1 = "http://localhost:3000/home/diachi/"+value;
+      $.get(link1, function(data){
         $("#huyen").html(data);
       });
+
     });
   });
 </script>

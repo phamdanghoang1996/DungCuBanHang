@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810040110) do
+ActiveRecord::Schema.define(version: 20170810081317) do
 
   create_table "cthds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "thanhtien"
@@ -37,8 +37,9 @@ ActiveRecord::Schema.define(version: 20170810040110) do
     t.string "string"
     t.string "email"
     t.string "diachi"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "id_tinh"
+    t.string "id_quan"
+    t.string "sonha"
   end
 
   create_table "loaisanphams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170810040110) do
 
   create_table "provinces", primary_key: "provinceid", id: :string, limit: 5, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", limit: 100, null: false
+    t.bigint "tienvanchuyen"
   end
 
   create_table "sanphams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -76,13 +78,6 @@ ActiveRecord::Schema.define(version: 20170810040110) do
     t.datetime "ngaynhap"
     t.bigint "loaisanpham_id"
     t.index ["loaisanpham_id"], name: "index_sanphams_on_loaisanpham_id"
-  end
-
-  create_table "taikhoankhs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "tendangnhap"
-    t.string "matkhau"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -98,18 +93,9 @@ ActiveRecord::Schema.define(version: 20170810040110) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "hoten"
-    t.string "tinh"
-    t.string "quan"
-    t.string "nha"
-    t.string "sodt"
-    t.integer "checkthongtinkhuyemai"
-    t.bigint "khachhang_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["khachhang_id"], name: "index_users_on_khachhang_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "sanphams", "loaisanphams"
-  add_foreign_key "users", "khachhangs"
 end
