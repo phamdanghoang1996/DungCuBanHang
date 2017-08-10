@@ -1,0 +1,7 @@
+
+.footer nav:first-child{
+  background-color: #7D7D7D;
+}
+.footer nav:nth-child(2){
+  background-color: #4D4D4D;
+}

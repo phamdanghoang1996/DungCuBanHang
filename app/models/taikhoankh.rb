@@ -1,0 +1,2 @@
+class Taikhoankh < ApplicationRecord
+end

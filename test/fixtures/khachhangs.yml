@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sodienthoai: MyString
+  string: MyString
+  email: MyString
+  diachi: MyString
+
+two:
+  name: MyString
+  sodienthoai: MyString
+  string: MyString
+  email: MyString
+  diachi: MyString

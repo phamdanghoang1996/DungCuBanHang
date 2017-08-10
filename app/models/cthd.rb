@@ -1,0 +1,2 @@
+class Cthd < ApplicationRecord
+end

@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-6">
+      <%= image_tag(@showsp.hinhanh, :alt => "sp", :class => "img-responsive") %>
+  </div>
+  <div class="col-5">
+      <h3> <%= @showsp.tensanpham %> </h3>
+      <p>  Giá bán:  <%=@showsp.gia %> </span></p>
+      <p>  Còn lại:  <%=@showsp.soluong %> </span></p>
+      <p>  Giới thiệu: <%=@showsp.gioithieu %></span></p>
+      <p>
+      <p>
+        <a href="/home/thongtinkhachhang/<%=@id%>"><button type="submit" name="button">ĐẶT HÀNG</button></a>
+      </p>
+  </div>
+</div>

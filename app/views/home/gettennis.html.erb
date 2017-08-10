@@ -1,0 +1,22 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".sanpham").mouseover(function(){
+      var id = $(this).attr('id');
+      var id_over = "#"+id;
+      $(id_over).css({"opacity":"0.5"})
+    });
+    $('.sanpham').mouseout(function(){
+      var id = $(this).attr('id');
+      var id_over = "#"+id;
+      $(id_over).css({"opacity":"1"})
+    });
+  });
+</script>
+<% @sptennis.each do |item| %>
+<div class="col-4">
+  <%= image_tag item.hinhanh, :alt=>"Ao Bong Da", :class=>"sanpham", :id=>item.id %>
+    <p style="margin-left: 10%;"> <%= item.tensanpham %> </p>
+    <p style="margin-left: 30%;"> <%= item.gia %> Đồng</p>
+      <a href="/home/sanpham/<%=item.id%>" id="datmua"><button type="button" name="button">ĐẶT MUA</button></a>
+</div>
+<% end %>

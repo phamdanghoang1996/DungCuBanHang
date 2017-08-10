@@ -1,0 +1,25 @@
+<div class="container">
+  <nav class="menu">
+        <ul class="tab">
+      <% if user_signed_in? %>
+            <li style="padding-left: 40px"></label>  Logged in as <strong><%= current_user.id %></strong></li>
+            <li style="padding-left: 40px"><%= link_to 'Thay đổi tài khoản', edit_user_registration_path, :class => 'navbar-link', :style=> "font-size: 15px" %></li>
+            <li style="padding-left: 40px"><%= link_to "Đăng xuất", destroy_user_session_path, method: :delete, :class => 'navbar-link', :style=> "font-size: 15px"  %> </li>
+      <% else %>
+            <li style="padding-left: 40px"> <%= link_to "Đăng ký tài khoản", new_user_registration_path, :class => 'navbar-link', :style=> "font-size: 15px"  %> </li>
+            <li style="padding-left: 40px"> <%= link_to "Đăng nhập", new_user_session_path, :class => 'navbar-link', :style=> "font-size: 15px"  %> </li>
+          </ul>
+      <% end %>
+  </nav>
+  <nav class="menu">
+        <ul>
+              <li><a href="/home/do-bong-da">ĐỒ BÓNG ĐÁ</a></li>
+              <li>
+                <a href="/home/tap-gym">Tập Gym</a>
+              </li>
+              <li><a href="/home/tap-yoga">Tập Yoga</a></li>
+              <li><a href="/home/tap-tennis">Tennis</a></li>
+              <li><a href="/home/">Thời trang thể thao</a></li>
+        </ul>
+  </nav>
+</div>

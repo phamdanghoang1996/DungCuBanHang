@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  thanhtien: 1
+  phivanchuyen: 1
+
+two:
+  thanhtien: 1
+  phivanchuyen: 1

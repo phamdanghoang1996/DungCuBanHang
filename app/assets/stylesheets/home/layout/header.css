@@ -1,0 +1,122 @@
+/*Cac Col duoc chia thanh */
+[class*="col-"] {
+  float: left;
+  margin-top: 10px;
+  margin-left: 5px;
+  height: 500px;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.row{
+  margin-left: 0 auto;
+}
+#datmua{
+  margin-left: 35%;
+}
+.col-4{
+  border: 1px solid #6666;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 32%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+/* Menu */
+  nav {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #FFFFFF;
+  }
+ .menu {
+   font-weight: bold;
+ }
+ .menu ul {
+   display: inline-flex;
+   margin-left: 30%;
+ }
+ .menu li{
+   color: #7D7D7D;
+   list-style: none;
+   padding-left: 40px;
+ }
+ .menu li a{
+   text-decoration: none;
+   font-size: 16px;
+   font-weight: bold;
+ }
+ .menu li a:hover{
+   color: #4D4D4D
+ }
+ #logo{
+   display: block;
+   margin: 0px;
+   width: 180px;
+ }
+ .sanpham {
+   width: 400px;
+ }
+ .menu .tab{
+   margin-left: 40%;
+ }
+ .menu:first-child{
+   background-color: black;
+   height: 40px;
+ }
+ .menu:first-child{
+   color: #fff;
+ }
+ .menu .tab li  {
+   padding-left: 30px;
+ }
+/* For phone */
+@media screen and (max-width: 768px){
+  [class*="col-"]{
+    width: 100%;
+  }
+  .container{
+    width: 100%;
+  }
+  .menu ul{
+    display: inline-grid;
+    margin-left: 0%;
+  }
+  #logo{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+  }
+  .menu li{
+    color: #7D7D7D;
+    list-style: none;
+    padding-left: 30px;
+  }
+}
+/*For Tablet */
+@media screen and (min-width: 768px ) and (max-width: 970px){
+  [class*="col-"]{
+    width: 100%;
+  }
+  .menu ul{
+    margin-left: 0%;
+  }
+  #logo{
+    display: block;
+    margin: 0 auto;
+    width: 180px;
+  }
+}
+/*For Destop*/
+@media screen and (min-width: 970px) and (max-width: 96%) {
+  .menu ul{
+    margin-left: 0%;
+  }
+}
