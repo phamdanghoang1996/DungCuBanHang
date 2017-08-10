@@ -1,0 +1,13 @@
+<div class="container">
+  <h3>Kết quả tìm kiếm với từ khóa: <strong><%= @tukhoa %></strong> </h3>
+  <% @ketqua.each do |item| %>
+  <div class="col-md-4 text-center">
+    <%= image_tag item.hinhanh, :alt=>"Ao Bong Da", :class=>"sanpham img-responsive", :id=>item.id %>
+        <strong>  <p> <%= item.tensanpham %> </p></strong>
+        <strong> <p> <%= item.gia %> Đồng</p></strong>
+        <div class="text-center">
+          <a href="/home/sanpham/<%=item.id%>" id="datmua"><button type="button" name="button">ĐẶT MUA</button></a>
+        </div>
+  </div>
+  <%end%>
+</div>

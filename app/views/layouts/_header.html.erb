@@ -1,25 +1,27 @@
-<div class="container">
-  <nav class="menu">
-        <ul class="tab">
-      <% if user_signed_in? %>
-            <li style="padding-left: 40px"></label>  Logged in as <strong><%= current_user.id %></strong></li>
-            <li style="padding-left: 40px"><%= link_to 'Thay đổi tài khoản', edit_user_registration_path, :class => 'navbar-link', :style=> "font-size: 15px" %></li>
-            <li style="padding-left: 40px"><%= link_to "Đăng xuất", destroy_user_session_path, method: :delete, :class => 'navbar-link', :style=> "font-size: 15px"  %> </li>
-      <% else %>
-            <li style="padding-left: 40px"> <%= link_to "Đăng ký tài khoản", new_user_registration_path, :class => 'navbar-link', :style=> "font-size: 15px"  %> </li>
-            <li style="padding-left: 40px"> <%= link_to "Đăng nhập", new_user_session_path, :class => 'navbar-link', :style=> "font-size: 15px"  %> </li>
-          </ul>
-      <% end %>
-  </nav>
-  <nav class="menu">
-        <ul>
-              <li><a href="/home/do-bong-da">ĐỒ BÓNG ĐÁ</a></li>
-              <li>
-                <a href="/home/tap-gym">Tập Gym</a>
-              </li>
-              <li><a href="/home/tap-yoga">Tập Yoga</a></li>
-              <li><a href="/home/tap-tennis">Tennis</a></li>
-              <li><a href="/home/">Thời trang thể thao</a></li>
-        </ul>
-  </nav>
-</div>
+<nav class="navbar navbar-inverse">
+ <div class="container-fluid">
+   <ul class="nav navbar-nav">
+     <li><a href="#">Home</a></li>
+     <li><a href="/home/do-bong-da">ĐỒ BÓNG ĐÁ</a></li>
+     <li><a href="/home/tap-gym">Tập Gym</a> </li>
+     <li><a href="/home/tap-yoga">Tập Yoga</a></li>
+     <li><a href="/home/">Thời trang thể thao</a></li>
+   </ul>
+   <ul class="nav navbar-nav navbar-right">
+     <form class="navbar-form navbar-left" action="/home/tim-kiem/ket-qua" method="post">
+       <div class="form-group">
+         <input type="text" class="form-control" placeholder="Search" name="tukhoa">
+       </div>
+       <button type="submit" class="btn btn-default">Submit</button>
+     </form>
+     <% if user_signed_in? %>
+          Logged in as <strong><%= current_user.email %></strong>.
+          <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+          <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
+    <% else %>
+          <li> <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>
+          <li> <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> </li>
+    <% end %>
+   </ul>
+ </div>
+</nav>
